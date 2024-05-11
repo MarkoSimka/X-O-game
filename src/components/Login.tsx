@@ -1,7 +1,7 @@
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Button, Box, TextField, FormControl, FormLabel, FormGroup } from '@mui/material';
+import { Button, Box, TextField, FormLabel, FormGroup } from '@mui/material';
 
 import { useForm } from 'react-hook-form';
 
@@ -10,7 +10,7 @@ function Login() {
     const [password, setPassword] = useState('');
     const auth = getAuth();
     let navigate = useNavigate();
-    const { register, handleSubmit } = useForm();
+    const { handleSubmit } = useForm();
 
     const login = () => {
         signInWithEmailAndPassword(auth, email, password)

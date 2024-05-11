@@ -1,12 +1,4 @@
-import {
-    addDoc,
-    collection,
-    CollectionReference,
-    doc,
-    getDoc,
-    getFirestore,
-    Timestamp,
-} from 'firebase/firestore';
+import {addDoc, collection, CollectionReference, getDoc, getFirestore} from 'firebase/firestore';
 import { gameConverter } from '../config/converters';
 import { Game } from '../context/game/state';
 

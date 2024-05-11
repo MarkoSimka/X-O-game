@@ -16,7 +16,7 @@ import { useNavigate } from 'react-router-dom';
 import createGame from '../utils/createGame';
 import addPlayerToGame from '../utils/addPlayerToGame';
 import { queryExistingGame, queryGamesOpened } from '../utils/queries';
-import { entries, size } from 'lodash';
+import { entries } from 'lodash';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import { Game } from '../context/game/state';
@@ -80,19 +80,13 @@ function GameComponent() {
         const unsubscribe = auth.onAuthStateChanged(async user => {
             if (user) {
                 //user is logged in
-                console.log("There's a logged in user", user);
                 const existingGamesSnap = await getDocs<Game>(queryExistingGame(user.uid)); //gets existing games with current user
-
-                console.log('existing game', existingGamesSnap);
 
                 if (existingGamesSnap.empty) {
                     const gamesOpenedSnap = await getDocs<Game>(queryGamesOpened()); //gets existing games with 1 player
                     if (gamesOpenedSnap.empty) {
                         let newGameDoc = await createGame(user.uid); //creates new game
                         unsubFromCurrentGame.current = listenToCurrentGame(user.uid, newGameDoc.id);
-                        // setGame(newGameDoc);
-                        // setGameId(newGameDoc.id);
-                        // setMove('X');
                         dispatch(setGame(newGameDoc));
                     } else {
                         addPlayerToGame(user.uid, gamesOpenedSnap.docs[0].id); //adds player to existing game
@@ -100,12 +94,6 @@ function GameComponent() {
                             user.uid,
                             gamesOpenedSnap.docs[0].id
                         );
-                        // setGame({
-                        //     ...gamesOpenedSnap.docs[0].data(),
-                        //     id: gamesOpenedSnap.docs[0].id,
-                        // })
-                        // setGameId(gamesOpenedSnap.docs[0].id);
-                        // setMove('O');
                         dispatch(
                             setGame({
                                 ...gamesOpenedSnap.docs[0].data(),
@@ -119,11 +107,6 @@ function GameComponent() {
                         user.uid,
                         existingGamesSnap.docs[0].id
                     );
-                    // setGame({
-                    //     ...existingGamesSnap.docs[0].data(),
-                    //     id: existingGamesSnap.docs[0].id,
-                    // })
-                    // setGameId(existingGamesSnap.docs[0].id);
                     dispatch(
                         setGame({
                             ...existingGamesSnap.docs[0].data(),
@@ -161,7 +144,6 @@ function GameComponent() {
                 console.log('Game in drawBoard:', game);
                 setFields(game.fields);
             }
-            // setGame(game);
             store.dispatch(setGame(game));
         }
     };

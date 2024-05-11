@@ -1,7 +1,6 @@
 import {
     collection,
     getFirestore,
-    Query,
     query,
     where,
     orderBy,

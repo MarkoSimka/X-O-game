@@ -51,14 +51,6 @@ export const useGame = () => {
     const state = useState();
     const dispatch = useDispatch();
 
-    // camelCase
-
-    // PascalCase
-
-    // snake_case
-
-    // kebab-case
-
     return {
         game: state.game,
         gameId: state.gameId,
