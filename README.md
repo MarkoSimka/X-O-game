@@ -1,46 +1,65 @@
-# Getting Started with Create React App
+# X/O (Tic Tac Toe) Game
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple X/O (Tic Tac Toe) game that leverages Firebase for authentication and database services. This README file provides an overview of the project and instructions for setting up Firebase.
 
-## Available Scripts
+##  Project Description
 
-In the project directory, you can run:
+This project is built with TypeScript and Firebase. It allows two players to play against each other in real-time using Firebase's real-time database. The game utilizes Firebase's onSnapshot method to listen for changes in the game state and updates the UI accordingly.
 
-### `yarn start`
+##  Features
+  *  Real-time gameplay using Firebase's real-time database.
+  *  Player authentication and management using Firebase Authentication.
+  *  TypeScript for type-safe development.
+  *  Firebase Cloud Functions for backend logic (if applicable).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+##  Getting Started
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+To get started with this project, follow these steps:
 
-### `yarn test`
+1.Clone the repository:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    https://github.com/MarkoSimka/X-O-game.git //https
 
-### `yarn build`
+    git@github.com:MarkoSimka/X-O-game.git //ssh
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2.Install Dependencies:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    cd xo-game
+    yarn
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3.Set Up Firebase:
+  * Create a new Firebase project on the [Firebase Console](https://console.firebase.google.com).
+  * Enable Firebase Authentication and Firebase Realtime Database.
+  * Obtain your Firebase config object.
 
-### `yarn eject`
+4.Configure Firebase:
+  *  Replace the Firebase config in src/firebase.ts with your own Firebase config.
+  *  Set up Firebase Authentication providers as per your requirements.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+5.Start the Development Server:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    yarn start
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+6.Open the application
+Open your browser and navigate to http://localhost:3000 to view the application.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+##  Firebase Services
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+###  Real-time Database
+The game uses Firebase's real-time database to store and synchronize game state between players. Firebase's onSnapshot method is used to listen for changes in the database and update the UI in real-time.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+###  Authentication
+Firebase Authentication is used to authenticate players and manage player sessions. Players can sign up, log in, and log out using various authentication providers supported by Firebase.
+
+##  Contributing
+Contributions are welcome! If you have any ideas, enhancements, or bug fixes, feel free to open an issue or submit a pull request.
+
+##  License
+This project is licensed under the [MIT License](https://opensource.org/license/mit).
+
+Thank you for choosing "Poke". We hope this application serves as a valuable resource for your chat application development needs. If you have any questions or need further assistance, please don't hesitate to reach out.
+
+Happy coding!
+
+
