@@ -58,7 +58,7 @@ Contributions are welcome! If you have any ideas, enhancements, or bug fixes, fe
 ##  License
 This project is licensed under the [MIT License](https://opensource.org/license/mit).
 
-Thank you for choosing "Poke". We hope this application serves as a valuable resource for your chat application development needs. If you have any questions or need further assistance, please don't hesitate to reach out.
+Thank you for choosing "X-O-game". We hope this application serves as a valuable resource for your development needs. If you have any questions or need further assistance, please don't hesitate to reach out.
 
 Happy coding!
 
